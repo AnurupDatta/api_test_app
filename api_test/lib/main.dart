@@ -1,24 +1,30 @@
-import 'package:api_test/webview_button.dart';
+import 'package:api_test/web_view_page.dart';
 import 'package:flutter/material.dart';
-
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Phone Input WebView',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.deepOrange,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepOrange,
+          foregroundColor: Colors.white,
+          elevation: 0,
+        ),
       ),
-      home: WebviewButton()
+      home: const WebViewPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
+
 
